@@ -4,9 +4,15 @@ import http from 'http';//biblioteca nativa
 
 const PORT = 3000;//letra maiúscula no nome para informações estáticas
 
+const rotas = {
+    "/":"Curso de Node.js",
+    "/livros": "Entrei na rota livros",
+    "/autores": "Entrei na rota autores"
+}
+
 const server = http.createServer((req,res) =>{
     res.writeHead(200, {"Content-Type":"text/plain"});
-    res.end('Curso de Node js')
+    res.end(rotas[req.url])
 })
 
 server.listen(PORT,()=>{
