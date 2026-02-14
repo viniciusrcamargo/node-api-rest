@@ -7,7 +7,7 @@ const PORT = 3000;//letra maiúscula no nome para informações estáticas
 const rotas = {
     "/":"Curso de Node.js",
     "/livros": "Entrei na rota livros",
-    "/autres": "Entrei na rota autores"
+    "/autores": "Entrei na rota autores"
 }
 
 const server = http.createServer((req,res) =>{
