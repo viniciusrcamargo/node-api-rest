@@ -15,7 +15,10 @@ const livros = [
     }]
 
 app.get("/", (req, res) => {
-    res.status(200).send("Curso de Node.js");
+    res.status(200).send("Curso de Node.js");//sent para enviar a resposta para o cliente, status para informar o status da resposta, 200 é sucesso
 });
+app.get("/livros", (req, res) => {
+    res.status(200).json(livros);//json para enviar um objeto json para o cliente
+});//json notação de objeto para objetos em javascript 
 
 export default app;
