@@ -1,6 +1,8 @@
 import express from "express";
 
 const app = express();
+app.use(express.json());//middleware para transformar o corpo da requisição em um objeto json, para poder acessar os dados do corpo da requisição
+
 
 const livros = [
     {
@@ -20,5 +22,10 @@ app.get("/", (req, res) => {
 app.get("/livros", (req, res) => {
     res.status(200).json(livros);//json para enviar um objeto json para o cliente
 });//json notação de objeto para objetos em javascript 
+
+app.post("/livros", (req, res)=> {
+    livros.push(req.body);
+    res.status(201).send("Livro adicionado com sucesso");
+})
 
 export default app;
