@@ -45,4 +45,10 @@ app.put("/livros/:id", (req, res) => {
     res.status(200).json(livros);
 });
 
+app.delete("/livros/:id", (req, res) =>{
+    const index = buscaLivro(req.params.id);
+    livros.splice(index, 1);//splice para remover um elemento do array, o primeiro parâmetro é o índice do elemento a ser removido, o segundo parâmetro é a quantidade de elementos a serem removidos
+    res.status(200).json('livro removido com sucesso!\n', livros);
+})
+
 export default app;
